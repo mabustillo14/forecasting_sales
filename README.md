@@ -40,27 +40,34 @@ path_images = "PATH DE OUTPUT GRÁFICOS"
 # <br> Análisis de Negocio 🌟
 
 ### 1. Preparación de Datos 🔍
-Análisis Exploratorio
+**Análisis Exploratorio**
 - Se utilizó un dataset de acciones de OYO con 3052 registros, que proporciona los cambios en el precio de su viaje financiero.
 - El análisis exploratorio se realizó mediante gráficos para entender la relación entre las variables y la tendencia a lo largo del tiempo.
 
-Procesamiento de Datos
+![Evolución de los Apertura vs. Cierre del Mercado](/images/fig_3.png)
+
+**Procesamiento de Datos**
 - Para el análisis nos enfocamos en las columas de Fecha (‘Date’) y el Precio de Cierre (‘Close’). Los datos se dividen en dos partes: una para entrenar el modelo (el 80% de los datos) y otra para probarlo (el 20% restante).
 - Adicional, los datos fueron normalizados y redimensionados para poder implementar los modelos de Deep Learning. Cada modelo se basa en acciones de corto plazo (los 60 días anteriores).
 
+![Datos históricos del precio de las acciones de OYO](/images/fig_1.png)
+
 ### 2. Modelos Implementados 🤖
 
-Modelo LSTM
+**Modelo LSTM**
 - El modelo Long Short-Term Memory (LSTM) es una red neuronal que aprende de secuencias de datos y retiene información relevante a largo plazo, evitando errores comunes en el aprendizaje.
 - En la gráfica se observa que tanto la curva naranja (predicción del dataset de Train) y la curva roja (predicción del dataset de Test) están muy próximas al comportamiento real de los datos financieros.
 
+![Rendimiento del Modelo en la Predicción del Precio de las Acciones de OYO (Modelo LSTM)](/images/fig_5.png)
 
-Modelo GRU
+**Modelo GRU**
 - El modelo Gated Recurrent Units (GRU) es una versión más sencilla del modelo LSTM, que también aprende de secuencias pero de forma más rápida y eficiente, con menos complejidad.
 - En la gráfica se observa que tanto la curva naranja (predicción del dataset de Train) y la curva roja (predicción del dataset de Test) no alcanzan a seguir de manera precisa el comportamiento de los registros originales.
 
+![Rendimiento del Modelo en la Predicción del Precio de las Acciones de OYO (Modelo GRU)](/images/fig_7.png)
+
 ### 3. Evaluación de Modelos ✅
-MSE y MAPE
+**MSE y MAPE**
 - Se emplearon métricas estándar de rendimiento, como el MSE (Error Cuadrático Medio) y el MAPE (Error Absoluto Porcentual Medio), para evaluar la precisión de los modelos.
 
 - Un valor bajo de MSE indica que el modelo está realizando predicciones cercanas a los valores reales, mientras que un valor alto sugiere que el modelo no se está ajustando correctamente
@@ -68,6 +75,10 @@ MSE y MAPE
 
 ### 4. Predicción de Precios 🎯
 A través de la implementación del modelo LSTM, se realiza una predicción de los precios de las acciones en el corto plazo de 30 días (basado en datos de 60 días anteriores).
+
+![Predicción de Precios para los Próximos 30 Días](/images/fig_8.png)
+
+![Predicción en detalle de Precios para los Próximos 30 Días](/images/fig_9.png)
 
 
 ### 5. Conclusiones 🚀
